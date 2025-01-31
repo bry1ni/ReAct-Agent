@@ -6,3 +6,4 @@ langchain_openai
 langgraph
 pydantic
 tavily-python
+flake8
