@@ -1,0 +1,20 @@
+{
+    "models": {
+      "openai": {
+        "llm": {
+          "name": "gpt-4o-mini",
+          "temperature": 0.4
+        },
+        "mlm": {
+          "name": "gpt-4o",
+          "temperature": 0.5
+        },
+        "vlm": {
+          "name": "openai/clip-vit-base-patch32",
+          "temperature": 0
+        }
+      },
+      "anthropic":{}
+    }
+}
+  

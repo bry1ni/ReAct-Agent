@@ -1,0 +1,8 @@
+pandas
+google-api-python-client
+langchain
+langchain_core
+langchain_openai
+langgraph
+pydantic
+tavily-python
