@@ -1,9 +1,15 @@
-from src.tasks.agents.react import app
-from src.tasks.agents.utils import send_user_message_with_stream
-from src.tasks.agents import memory, config
+from src.tasks.react import react
 
-# Interact with the agent
 query_test = "what's Ryan ibrahim's biography ? and what is he studying atm ?"
 
-response = send_user_message_with_stream(query_test, app, config, memory, stream_mode="none")
-print(response)
+response = react.run(
+    query_test,
+    images=None,
+    show_reasoning=True
+)
+
+assistant_response = next(
+    (msg.content for msg in response.messages if msg.role == "assistant" and msg.content), 
+    None
+)
+print(assistant_response)

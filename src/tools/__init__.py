@@ -1,4 +1,4 @@
-from .utils import get_all_tools
+from lookup_student_info import lookup_student_info
+from agno.tools.tavily import TavilyTools # web serach tool
 
-# Dynamically load all tools
-TOOLS = get_all_tools()
+TOOLS = [lookup_student_info, TavilyTools()]
