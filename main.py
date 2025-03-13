@@ -1,15 +1,15 @@
+import asyncio
 from src.tasks.react import react
+from agents import Runner
 
 query_test = "what's Ryan ibrahim's biography ? and what is he studying atm ?"
 
-response = react.run(
-    query_test,
-    images=None,
-    show_reasoning=True
-)
+async def run_react(agent=react, query=query_test):
+    result = await Runner.run(
+        agent,
+        query,
+    )
+    print(result.final_output)
 
-assistant_response = next(
-    (msg.content for msg in response.messages if msg.role == "assistant" and msg.content), 
-    None
-)
-print(assistant_response)
+if __name__ == "__main__":
+    asyncio.run(run_react())
